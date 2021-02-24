@@ -42,5 +42,12 @@ namespace RPG_dotnet.Controllers
         {
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
+        
+        [HttpPost]
+        public IActionResult AddCharacter(Character newCharacter)
+        {
+            characters.Add(newCharacter);
+            return Ok(characters);
+        }
     }
 }
