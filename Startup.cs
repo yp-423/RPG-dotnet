@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RPG_dotnet.Services.CharacterService;
+using AutoMapper;
 
 namespace RPG_dotnet
 {
@@ -28,6 +30,10 @@ namespace RPG_dotnet
         {
 
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
+            //製作Services功能後，需到Starup.cs添加功能，否則報錯
+            services.AddScoped<ICharacterService, CharacterService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RPG_dotnet", Version = "v1" });
