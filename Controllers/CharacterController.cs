@@ -41,13 +41,26 @@ namespace RPG_dotnet.Controllers
         public async Task<IActionResult> AddCharacter(AddCharacterDto newCharacter)
         {
             return Ok(await _characterService.AddCharacter(newCharacter));
-        }
-        
-        [HttpPost]
-        public IActionResult AddCharacter(Character newCharacter)
+        } 
+        //修改角色
+        [HttpPut]
+        public async Task<IActionResult> UpdateCharacter(UpdateCharacterDto updateCharacter)
         {
-            characters.Add(newCharacter);
-            return Ok(characters);
+            ServiceResponse<GetCharacterDto> response = await _characterService.UpdateCharacter(updateCharacter);
+            if(response.Data == null) {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+        //刪除角色
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            ServiceResponse<List<GetCharacterDto>> response = await _characterService.DeleteCharater(id);
+            if(response.Data == null) {
+                return NotFound(response);
+            }
+            return Ok(response);
         }
     }
 }
