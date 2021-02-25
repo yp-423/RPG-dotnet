@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RPG_dotnet.Services.CharacterService;
 using AutoMapper;
+using RPG_dotnet.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace RPG_dotnet
 {
@@ -28,7 +30,8 @@ namespace RPG_dotnet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            //使用appsettings.json資料登入SQL
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             //製作Services功能後，需到Starup.cs添加功能，否則報錯

@@ -11,7 +11,7 @@
 
 # 開始
 
-## 第一步
+## 第一步 (創建新增、刪除、修改、查詢方法)
 
 1. 創建Model資料夾，裡面創建各種會使用到的分類，例如 : 角色資料-指定角色屬性
 
@@ -133,4 +133,28 @@
           ![image-20210225132307969](Images/image-20210225132307969.png)
    
           ![image-20210225132534548](Images/image-20210225132534548.png)
+
+## 第二步 (創建資料庫)
+
+1. 安裝 EFCore
+
+   ![image-20210225144113173](Images/image-20210225144113173.png)
+
+2. 安裝entity framework tool讓我們可以使用entity framework
+
+   ![image-20210225144523999](Images/image-20210225144523999.png)
+   
+   ![image-20210225153558866](Images/image-20210225153558866.png)
+   
+3. 輸入 dotnet ef 指令啟動EF
+
+   ![image-20210225153727333](Images/image-20210225153727333.png)
+
+4. 下載SQL Server2019 Express
+
+5. 設定登入檔
+
+   ![image-20210225171018930](Images/image-20210225171018930.png)
+
+   ![image-20210225175452653](Images/image-20210225175452653.png)
 
