@@ -203,3 +203,23 @@
       2. 修改並添加await參數
 
          ![image-20210308171420271](Images/image-20210308171420271.png)
+
+## 第三步(創建使用者)
+
+1. 建立使用者模型
+
+   ![image-20210309143820128](Images/image-20210309143820128.png)
+
+2. 建立資料表 輸入 : dotnet ef migrations add User
+
+   ![image-20210309144709651](Images/image-20210309144709651.png)
+
+3. 查看Migrations資料夾，出現User代表表單頁面生成，後輸入 : dotnet ef database update，經資料表建立進SQL中
+   ![image-20210309145220511](Images/image-20210309145220511.png)
+
+4. 加上關聯，一個使用者可以擁有個角色，建立完後輸入 dotnet ef database update，更新資料庫
+   ![image-20210309160254138](Images/image-20210309160254138.png)
+   ![image-20210309160907013](Images/image-20210309160907013.png)
+
+5. 
+
